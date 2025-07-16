@@ -1,0 +1,21 @@
+@use '../breakpoints/index.scss' as *;
+
+@mixin breakpoint($key, $type: max) {
+  $size: map-get($breakpoints, $key);
+
+  @if $size {
+    @if $type == max {
+      @media (max-width: $size) {
+        @content;
+      }
+    } @else if $type == min {
+      @media (min-width: $size) {
+        @content;
+      }
+    } @else {
+      @warn 'Invalid breakpoint type: #{$type}. Use min or max.';
+    }
+  } @else {
+    @warn 'breakpoint "#{$key}" not found in $breakpoints map';
+  }
+}
