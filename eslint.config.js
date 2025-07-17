@@ -15,13 +15,30 @@ export default tseslint.config([
     },
     rules: {
       'prettier/prettier': 'error',
+
+      'default-param-last': 'warn',
+      'jsx-quotes': ['error', 'prefer-single'],
+      'max-len': [
+        'warn',
+        100,
+        2,
+        {
+          ignoreUrls: true,
+          ignoreComments: true,
+          ignoreRegExpLiterals: true,
+          ignoreStrings: true,
+          ignoreTemplateLiterals: true,
+        },
+      ],
+
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
     },
     extends: [
       js.configs.recommended,
-      tseslint.configs.recommended,
+      tseslint.configs.recommendedTypeChecked,
       reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
-      prettier,
     ],
     languageOptions: {
       ecmaVersion: 2020,
