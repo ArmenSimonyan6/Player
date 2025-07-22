@@ -18,6 +18,7 @@ const playerSlice = createSlice({
       state.currentTrack = action.payload;
       state.isPlaying = true;
     },
+
     pauseTrack: state => {
       state.isPlaying = false;
     },

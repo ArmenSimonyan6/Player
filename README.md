@@ -19,8 +19,27 @@ This project is a modern **Music Player** built using **React**, **TypeScript**,
 
 ## 🛠️ Getting Started
 
-### 1. Install dependencies
+In the project directory, you can run:
 
-```bash
-yarn
-```
+### `yarn dev`
+
+Runs the app in the development mode.
+Open http://localhost:5173 to view it in the browser.
+
+The page will reload if you make edits.
+You will also see any TypeScript & Lint warnings & errors in the console.
+
+### `yarn lint`
+
+Runs ESLint rules checker against the code.
+
+### `yarn lint:fix`
+
+Runs ESLint errors automatic fixing where it's possible.
+
+### `yarn build`
+
+Builds the app for production to the dist folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+So that the app is ready to be deployed.
