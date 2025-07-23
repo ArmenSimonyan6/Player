@@ -57,6 +57,5 @@
 @mixin flex_column_between {
   @include flex_column;
 
-  align-items: center;
-  justify-content: space-between;
+  @include flex_align_between;
 }
