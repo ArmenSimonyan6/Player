@@ -1,0 +1,25 @@
+$font_resources_path: '/src/styles/fonts/Montserrat';
+
+@font-face {
+  font-family: 'Montserrat-Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: url('#{$font_resources_path}/Montserrat-Medium.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat-SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  src: url('#{$font_resources_path}/Montserrat-SemiBold.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('#{$font_resources_path}/Montserrat-Bold.ttf') format('truetype');
+  font-display: swap;
+}

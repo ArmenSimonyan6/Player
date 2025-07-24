@@ -1,3 +1,5 @@
+@import './fonts//Montserrat/index.scss';
+
 * {
   outline: none !important;
   box-sizing: border-box;
@@ -104,6 +106,10 @@ menu,
 nav,
 section {
   display: block;
+}
+
+main {
+  width: 100%;
 }
 
 ol,

@@ -1,7 +1,10 @@
-import React, { type PropsWithChildren } from 'react';
+import { Sidebar } from '@/components';
+import { type PropsWithChildren } from 'react';
+import styles from './Layout.module.scss';
 
 export const Layout = ({ children }: PropsWithChildren) => (
-  <React.Fragment>
+  <div className={styles.layout}>
+    <Sidebar />
     <main>{children}</main>
-  </React.Fragment>
+  </div>
 );
