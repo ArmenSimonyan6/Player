@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './Sidebar.module.scss';
 import { ROUTES, ROUTES_GROUP } from '@/routes';
 import { BookSaveIcon, HomeIcon, Logo, MicrophoneIcon, MusicLibraryIcon } from '@/assets';
-import { IRouteItem, RouteTitle } from './SideBar.props';
+import { RouteTitle } from './SideBar.props';
 import classNames from 'classnames';
 
 const iconMap: Record<RouteTitle, JSX.Element> = {
@@ -14,10 +14,7 @@ const iconMap: Record<RouteTitle, JSX.Element> = {
   'Page 4': <BookSaveIcon />,
 };
 
-const shownLinks = ROUTES_GROUP.filter(
-  (route): route is IRouteItem & { title: RouteTitle } =>
-    Boolean(route.showInSidebar) && typeof route.title === 'string'
-);
+const shownLinks = ROUTES_GROUP.filter(route => route.showInSidebar);
 
 export const Sidebar = () => (
   <aside className={styles.sidebar}>
@@ -43,10 +40,8 @@ export const Sidebar = () => (
                 })
               }
             >
-              <span className={styles.icon}>{iconMap[title]}</span>
-              <span className={styles.titleWrapper}>
-                <span className={styles.title}>{title}</span>
-              </span>
+              <span className={styles.icon}>{iconMap[title as RouteTitle]}</span>
+              <span className={styles.title}>{title}</span>
             </NavLink>
           ))}
         </nav>
