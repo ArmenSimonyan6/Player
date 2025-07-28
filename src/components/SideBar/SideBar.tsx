@@ -1,9 +1,11 @@
+import { JSX } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Sidebar.module.scss';
-import { BookSaveIcon, HomeIcon, Logo, MicrophoneIcon, MusicLibraryIcon } from '@/assets';
 import { ROUTES_GROUP } from '@/routes';
+import { BookSaveIcon, HomeIcon, Logo, MicrophoneIcon, MusicLibraryIcon } from '@/assets';
+import { IRouteItem, TRouteTitle } from './SideBar.props';
 
-const iconMap = {
+const iconMap: Record<TRouteTitle, JSX.Element> = {
   Home: <HomeIcon />,
   'Page 1': <MicrophoneIcon />,
   'Page 2': <MusicLibraryIcon />,
@@ -11,25 +13,32 @@ const iconMap = {
   'Page 4': <BookSaveIcon />,
 };
 
+const shownLinks = ROUTES_GROUP.filter(
+  (route): route is IRouteItem & { title: TRouteTitle } =>
+    Boolean(route.showInSidebar) && typeof route.title === 'string'
+);
+
 export const Sidebar = () => (
   <aside className={styles.sidebar}>
     <div className={styles.container}>
-      <div className={styles.logo}>
+      <div className={styles.container__logo}>
         <Logo />
       </div>
-      <div className={styles.sectionLinks}>
-        <div className={styles.sectionTitle}>
-          <span>Discover</span>
+      <div className={styles.container__sectionLinks}>
+        <div className={styles.container__sectionTitleWrap}>
+          <span className={styles.container__sectionTitle}>Discover</span>
         </div>
 
-        <nav className={styles.nav}>
-          {ROUTES_GROUP.filter(route => route.showInSidebar).map(({ path, title }) => (
+        <nav className={styles.container__nav}>
+          {shownLinks.map(({ path, title }) => (
             <NavLink
               key={path}
               to={path}
-              className={({ isActive }) => (isActive ? styles.active : styles.link)}
+              className={({ isActive }) =>
+                isActive ? styles.container__active : styles.container__link
+              }
             >
-              <span className={styles.icon}>{iconMap[title as keyof typeof iconMap]}</span>
+              <span className={styles.icon}>{iconMap[title]}</span>
               <span className={styles.title}>{title}</span>
             </NavLink>
           ))}

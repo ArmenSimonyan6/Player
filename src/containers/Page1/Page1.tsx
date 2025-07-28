@@ -3,7 +3,7 @@ import styles from './Page1.module.scss';
 const Page1 = () => {
   return (
     <div className={styles.container}>
-      <span>Page 1</span>
+      <span className={styles.container__title}>Page 1</span>
     </div>
   );
 };
