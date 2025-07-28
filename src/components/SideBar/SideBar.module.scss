@@ -86,9 +86,20 @@
     transition: transform 0.2s ease;
   }
 
-  .title {
+  .titleWrapper {
     @include text-wrap;
+    text-align: center;
     transition: transform 0.2s ease;
+
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   &__active {
