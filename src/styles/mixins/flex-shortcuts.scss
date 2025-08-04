@@ -20,6 +20,12 @@
   justify-content: space-between;
 }
 
+@mixin flex_align_around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 @mixin flex_between {
   display: flex;
   justify-content: space-between;
@@ -58,4 +64,10 @@
   @include flex_column;
 
   @include flex_align_between;
+}
+
+@mixin flex_column_align_center {
+  @include flex_column;
+
+  @include flex_center;
 }
