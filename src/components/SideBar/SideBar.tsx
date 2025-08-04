@@ -36,7 +36,7 @@ export const Sidebar = () => (
             to={path}
             className={({ isActive }) =>
               classNames(styles.sidebar__link, {
-                [styles.sidebar__active]: isActive,
+                [styles['sidebar__link--active']]: isActive,
               })
             }
           >
