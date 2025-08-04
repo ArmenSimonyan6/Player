@@ -40,8 +40,10 @@ export const Sidebar = () => (
                 })
               }
             >
-              <span className={styles.icon}>{iconMap[title as RouteTitle]}</span>
-              <span className={styles.title}>{title}</span>
+              <div className={styles.container__linkContent}>
+                <span className={styles.icon}>{iconMap[title as RouteTitle]}</span>
+                <span className={styles.title}>{title}</span>
+              </div>
             </NavLink>
           ))}
         </nav>
