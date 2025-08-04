@@ -18,36 +18,37 @@ const shownLinks = ROUTES_GROUP.filter(route => route.showInSidebar);
 
 export const Sidebar = () => (
   <aside className={styles.sidebar}>
-    <div className={styles.container}>
-      <div className={styles.container__logo}>
-        <NavLink to={ROUTES.HOME}>
-          <Logo />
-        </NavLink>
-      </div>
-      <div className={styles.container__sectionLinks}>
-        <div className={styles.container__sectionTitleWrap}>
-          <span className={styles.container__sectionTitle}>Discover</span>
-        </div>
+    <div className={styles.sidebar__logo}>
+      <NavLink to={ROUTES.HOME}>
+        <Logo />
+      </NavLink>
+    </div>
 
-        <nav className={styles.container__nav}>
-          {shownLinks.map(({ path, title }) => (
-            <NavLink
-              key={path}
-              to={path}
-              className={({ isActive }) =>
-                classNames(styles.container__link, {
-                  [styles.container__active]: isActive,
-                })
-              }
-            >
-              <div className={styles.container__linkContent}>
-                <span className={styles.icon}>{iconMap[title as RouteTitle]}</span>
-                <span className={styles.title}>{title}</span>
-              </div>
-            </NavLink>
-          ))}
-        </nav>
+    <div className={styles.sidebar__sectionLinks}>
+      <div className={styles.sidebar__sectionTitleWrap}>
+        <span className={styles.sidebar__sectionTitle}>Discover</span>
       </div>
+
+      <nav className={styles.sidebar__nav}>
+        {shownLinks.map(({ path, title }) => (
+          <NavLink
+            key={path}
+            to={path}
+            className={({ isActive }) =>
+              classNames(styles.sidebar__link, {
+                [styles.sidebar__active]: isActive,
+              })
+            }
+          >
+            <div className={styles.sidebar__linkContent}>
+              <span className={styles.sidebar__linkContent__icon}>
+                {iconMap[title as RouteTitle]}
+              </span>
+              <span className={styles.sidebar__linkContent__title}>{title}</span>
+            </div>
+          </NavLink>
+        ))}
+      </nav>
     </div>
   </aside>
 );
