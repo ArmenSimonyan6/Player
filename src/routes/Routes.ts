@@ -1,58 +1,74 @@
-import { Home, Page1 } from '@/containers';
 import { NotFound } from '@/pages';
 import { FC, ReactNode } from 'react';
+import { Home, Page1 } from '@/containers';
+import { AllRecommendedTracks } from '@/components/AllRecommendedTracks';
+import { AllTopAlbumTracks } from '@/components/AllTopAlbumTracks/AllTopAlbumTracks';
 
-interface RouteItem {
+interface IRouteItem {
   path: string;
   component: FC;
   title?: string;
   icon?: ReactNode;
-  showInSidebar?: boolean;
+  IsShowInSidebar?: boolean;
 }
 
 export const ROUTES = {
   HOME: '/',
+  NOTFOUND: '*',
   PAGE1: '/page1',
   PAGE2: '/page2',
   PAGE3: '/page3',
   PAGE4: '/page4',
-  NOTFOUND: '*',
+  RECOMMENDED_TRACKS: '/recommendedTracks',
+  TOP_ALBUM_TRACKS: '/topAlbumTracks',
 };
 
-export const ROUTES_GROUP: RouteItem[] = [
+export const ROUTES_GROUP: IRouteItem[] = [
   {
     path: ROUTES.HOME,
     component: Home,
     title: 'Home',
-    showInSidebar: true,
+    IsShowInSidebar: true,
+  },
+  {
+    path: ROUTES.NOTFOUND,
+    component: NotFound,
+    IsShowInSidebar: false,
   },
   {
     path: ROUTES.PAGE1,
     component: Page1,
     title: 'Page 1',
-    showInSidebar: true,
+    IsShowInSidebar: true,
   },
   {
     path: ROUTES.PAGE2,
     component: Page1,
     title: 'Page 2',
-    showInSidebar: true,
+    IsShowInSidebar: true,
   },
   {
     path: ROUTES.PAGE3,
     component: Page1,
     title: 'Page 3',
-    showInSidebar: true,
+    IsShowInSidebar: true,
   },
   {
     path: ROUTES.PAGE4,
     component: Page1,
     title: 'Page 4',
-    showInSidebar: true,
+    IsShowInSidebar: true,
   },
   {
-    path: ROUTES.NOTFOUND,
-    component: NotFound,
-    showInSidebar: false,
+    path: ROUTES.RECOMMENDED_TRACKS,
+    component: AllRecommendedTracks,
+    title: 'Recommended Tracks',
+    IsShowInSidebar: false,
+  },
+  {
+    path: ROUTES.TOP_ALBUM_TRACKS,
+    component: AllTopAlbumTracks,
+    title: 'Top Album Tracks',
+    IsShowInSidebar: false,
   },
 ];

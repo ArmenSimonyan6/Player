@@ -36,6 +36,12 @@
   flex-direction: column;
 }
 
+@mixin flex-center-stretch {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
 @mixin flex_column_align_end {
   @include flex_column;
 

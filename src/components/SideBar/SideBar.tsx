@@ -1,54 +1,69 @@
-import { JSX } from 'react';
-import { NavLink } from 'react-router-dom';
-import styles from './Sidebar.module.scss';
-import { ROUTES, ROUTES_GROUP } from '@/routes';
-import { BookSaveIcon, HomeIcon, Logo, MicrophoneIcon, MusicLibraryIcon } from '@/assets';
-import { RouteTitle } from './SideBar.props';
 import classNames from 'classnames';
+import { JSX, useRef } from 'react';
+import { RouteTitle } from './SideBar.props';
+import { ROUTES, ROUTES_GROUP } from '@/routes';
+import { NavLink, useLocation } from 'react-router-dom';
+import { useBaseClassNames, useScrollToActiveChild } from '@/hooks';
+import { BookSaveIcon, HomeIcon, Logo, MicrophoneIcon, MusicLibraryIcon } from '@/assets';
+import styles from './Sidebar.module.scss';
 
 const iconMap: Record<RouteTitle, JSX.Element> = {
   Home: <HomeIcon />,
-  'Page 1': <MicrophoneIcon />,
-  'Page 2': <MusicLibraryIcon />,
-  'Page 3': <MicrophoneIcon />,
-  'Page 4': <BookSaveIcon />,
+  [RouteTitle.Page1]: <MicrophoneIcon />,
+  [RouteTitle.Page2]: <MusicLibraryIcon />,
+  [RouteTitle.Page3]: <MicrophoneIcon />,
+  [RouteTitle.Page4]: <BookSaveIcon />,
 };
 
-const shownLinks = ROUTES_GROUP.filter(route => route.showInSidebar);
+export const Sidebar = () => {
+  const { pathname } = useLocation();
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const activeElementRef = useRef<HTMLAnchorElement | null>(null);
 
-export const Sidebar = () => (
-  <aside className={styles.sidebar}>
-    <div className={styles.sidebar__logo}>
-      <NavLink to={ROUTES.HOME}>
-        <Logo />
-      </NavLink>
-    </div>
+  const { baseClassName } = useBaseClassNames('sidebar', styles);
+  const shownLinks = ROUTES_GROUP.filter(({ IsShowInSidebar }) => IsShowInSidebar);
 
-    <div className={styles.sidebar__sectionLinks}>
-      <div className={styles.sidebar__sectionTitleWrap}>
-        <span className={styles.sidebar__sectionTitle}>Discover</span>
+  useScrollToActiveChild(containerRef, activeElementRef);
+
+  return (
+    <div className={baseClassName()}>
+      <div className={baseClassName('__logo')}>
+        <NavLink to={ROUTES.HOME}>
+          <Logo />
+        </NavLink>
       </div>
 
-      <nav className={styles.sidebar__nav}>
-        {shownLinks.map(({ path, title }) => (
-          <NavLink
-            key={path}
-            to={path}
-            className={({ isActive }) =>
-              classNames(styles.sidebar__link, {
-                [styles['sidebar__link--active']]: isActive,
-              })
-            }
-          >
-            <div className={styles.sidebar__linkContent}>
-              <span className={styles.sidebar__linkContent__icon}>
-                {iconMap[title as RouteTitle]}
-              </span>
-              <span className={styles.sidebar__linkContent__title}>{title}</span>
-            </div>
-          </NavLink>
-        ))}
-      </nav>
+      <div className={baseClassName('__sectionLinks')}>
+        <div className={baseClassName('__sectionTitleWrap')}>
+          <span className={baseClassName('__sectionTitle')}>Discover</span>
+        </div>
+
+        <nav className={baseClassName('__nav')} ref={containerRef}>
+          {shownLinks.map(({ path, title }) => {
+            const isActive = pathname === path;
+
+            return (
+              <NavLink
+                key={path}
+                to={path}
+                ref={isActive ? activeElementRef : null}
+                className={({ isActive }) =>
+                  classNames(baseClassName('__link'), {
+                    [baseClassName('__link', ['active'])]: isActive,
+                  })
+                }
+              >
+                <div className={baseClassName('__linkContent')}>
+                  <span className={baseClassName('__linkContent__icon')}>
+                    {iconMap[title as RouteTitle]}
+                  </span>
+                  <span className={baseClassName('__linkContent__title')}>{title}</span>
+                </div>
+              </NavLink>
+            );
+          })}
+        </nav>
+      </div>
     </div>
-  </aside>
-);
+  );
+};

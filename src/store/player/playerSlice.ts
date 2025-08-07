@@ -1,20 +1,20 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { PlayerState, Track } from './types';
+import type { TPlayerState, TPlayerSliceTrack } from './types';
 
-const initialState: PlayerState = {
-  currentTrack: null,
-  isPlaying: false,
+const initialState: TPlayerState = {
   playlist: [],
+  isPlaying: false,
+  currentTrack: null,
 };
 
 const playerSlice = createSlice({
   name: 'player',
   initialState,
   reducers: {
-    setPlaylist: (state, action: PayloadAction<Track[]>) => {
+    setPlaylist: (state, action: PayloadAction<TPlayerSliceTrack[]>) => {
       state.playlist = action.payload;
     },
-    playTrack: (state, action: PayloadAction<Track>) => {
+    playTrack: (state, action: PayloadAction<TPlayerSliceTrack>) => {
       state.currentTrack = action.payload;
       state.isPlaying = true;
     },

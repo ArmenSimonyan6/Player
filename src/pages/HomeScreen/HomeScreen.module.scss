@@ -1,0 +1,5 @@
+.home-screen {
+  @include flex_column_between;
+
+  width: 100%;
+}

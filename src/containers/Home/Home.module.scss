@@ -1,8 +1,9 @@
-.container {
-  font-family: 'Montserrat-Medium';
+.home {
+  @extend %font-montserrat-medium;
+  @include flex_column_between;
+
   width: 100%;
   height: 100%;
-  @include flex_center;
 
   &__title {
     @include text-wrap;

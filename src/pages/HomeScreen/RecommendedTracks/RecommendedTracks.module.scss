@@ -1,0 +1,30 @@
+.recommended-tracks {
+  width: 100%;
+  padding: 32px;
+
+  @include breakpoint(tablet) {
+    padding: 24px;
+  }
+
+  @include breakpoint(mobile-l) {
+    padding: 14px;
+  }
+
+  &__trackList {
+    @include scroll-hidden-x;
+
+    gap: 30px;
+    width: 100%;
+    display: flex;
+    overflow-x: hidden;
+    align-items: stretch;
+
+    @include breakpoint(tablet) {
+      gap: 20px;
+    }
+
+    @include breakpoint(mobile-l) {
+      gap: 10px;
+    }
+  }
+}
