@@ -10,5 +10,5 @@ export interface IRouteItem {
   path: string;
   title?: string;
   component: React.FC;
-  showInSidebar?: boolean;
+  IsShowInSidebar?: boolean;
 }

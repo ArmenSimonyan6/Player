@@ -1,3 +1,12 @@
 .layout {
   display: flex;
+
+  &__rightBlock {
+    width: calc(100vw - #{$sidebar-width});
+
+    @include breakpoint(tablet) {
+      width: 100%;
+      height: calc(100vh - #{$sidebar-height});
+    }
+  }
 }

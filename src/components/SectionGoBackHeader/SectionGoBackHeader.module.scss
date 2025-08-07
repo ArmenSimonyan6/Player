@@ -1,0 +1,48 @@
+.section-go-back-header {
+  @include flex_align;
+
+  gap: 8px;
+  margin-bottom: 20px;
+
+  @include breakpoint(tablet) {
+    gap: 6px;
+    font-size: 20px;
+  }
+
+  @include breakpoint(mobile-l) {
+    gap: 4px;
+    font-size: 18px;
+  }
+
+  &__goBackButton {
+    @include flex_align;
+
+    @include breakpoint(tablet) {
+      width: 26px;
+    }
+
+    @include breakpoint(mobile-l) {
+      width: 22px;
+    }
+  }
+
+  &__goBackButton:hover {
+    border-radius: 6px;
+    background-color: $color_dark_opacity10;
+  }
+
+  &__title {
+    @extend %font-montserrat-medium;
+
+    font-size: 24px;
+    color: $color_dark;
+
+    @include breakpoint(tablet) {
+      font-size: 20px;
+    }
+
+    @include breakpoint(mobile-l) {
+      font-size: 18px;
+    }
+  }
+}

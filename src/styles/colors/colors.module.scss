@@ -1,0 +1,20 @@
+@use './colors.scss' as *;
+
+:export {
+  colorWhite: $color_white;
+
+  colorGray50: $color_gray_50;
+  colorGray100: $color_gray_100;
+  colorGray150: $color_gray_150;
+  colorGray200: $color_gray_200;
+  colorGray400: $color_gray_400;
+  colorGray600: $color_gray_600;
+  colorGray800: $color_gray_800;
+
+  colorDark: $color_dark;
+  colorDarkOpacity50: $color_dark_opacity50;
+
+  colorViolet: $color_violet;
+  colorVioletOpacity10: $color_violet_opacity10;
+  colorVioletLinearGradient: $color_violet_linear_gradient;
+}

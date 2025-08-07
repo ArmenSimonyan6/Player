@@ -108,8 +108,25 @@ section {
   display: block;
 }
 
+body {
+  cursor:
+    url('@/assets/svg/cursor.svg') 10 10,
+    auto;
+}
+
+a:hover,
+button:hover {
+  cursor:
+    url('@/assets/cursorPointer.png') 10 10,
+    pointer !important;
+}
+
 main {
   width: 100%;
+
+  @include breakpoint(tablet) {
+    margin: 0;
+  }
 }
 
 ol,
@@ -131,7 +148,7 @@ input {
 button,
 a {
   border: 0;
-  cursor: pointer;
+  background: none;
   display: inline-block;
   text-decoration: none !important;
 }

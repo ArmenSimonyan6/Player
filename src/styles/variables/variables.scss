@@ -1,0 +1,28 @@
+// widths
+$sidebar-height: 60px;
+$sidebar-width: 270px;
+
+// scrolls
+@mixin scroll-hidden-x {
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+// texts
+@mixin text-wrap {
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

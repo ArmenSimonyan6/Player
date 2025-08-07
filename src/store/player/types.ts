@@ -1,12 +1,12 @@
-export interface Track {
+export type TPlayerSliceTrack = {
   id: string;
+  url: string;
   title: string;
   artist: string;
-  url: string;
-}
+};
 
-export interface PlayerState {
-  currentTrack: Track | null;
+export type TPlayerState = {
   isPlaying: boolean;
-  playlist: Track[];
-}
+  playlist: TPlayerSliceTrack[];
+  currentTrack: TPlayerSliceTrack | null;
+};

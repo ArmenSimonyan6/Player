@@ -1,0 +1,12 @@
+.top-chart-tracks {
+  width: 100%;
+  padding: 32px;
+
+  @include breakpoint(tablet) {
+    padding: 24px;
+  }
+
+  @include breakpoint(mobile-l) {
+    padding: 14px;
+  }
+}
