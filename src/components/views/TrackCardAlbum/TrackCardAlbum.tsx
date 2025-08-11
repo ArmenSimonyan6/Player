@@ -1,6 +1,7 @@
-import { Image } from '../Image';
+import { Image } from '@/components';
 import { useBaseClassNames } from '@/hooks';
 import { TPropsTrackCardAlbum } from './TrackCardAlbum.props';
+
 import styles from './TrackCardAlbum.module.scss';
 
 export const TrackCardAlbum = ({ image, onPlay }: TPropsTrackCardAlbum) => {

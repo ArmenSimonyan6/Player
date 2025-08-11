@@ -1,5 +1,5 @@
+import { Button } from '@/components';
 import { useBaseClassNames } from '@/hooks';
-import { Button } from '@/components/Button';
 import colors from '@/styles/colors/colors.module.scss';
 import { TSectionHeaderProps } from './SectionHeader.props';
 

@@ -1,7 +1,6 @@
-import { Image } from '../Image';
-import { Button } from '../Button';
 import { PlayIcon } from '@/assets';
 import { useBaseClassNames } from '@/hooks';
+import { Button, Image } from '@/components';
 import { TPropsTrackCard } from './TrackCard.props';
 import styles from './TrackCard.module.scss';
 
