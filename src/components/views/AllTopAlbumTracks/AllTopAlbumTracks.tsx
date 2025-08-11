@@ -1,7 +1,7 @@
 import { useBaseClassNames } from '@/hooks';
 import { TrackCardAlbum } from '../TrackCardAlbum';
+import { SectionGoBackHeader } from '@/components';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { SectionGoBackHeader } from '../SectionGoBackHeader';
 import { TTopAlbumTracksLocationState } from './AllTopAlbumTracks.props';
 
 import styles from './AllTopAlbumTracks.module.scss';
@@ -11,7 +11,7 @@ export const AllTopAlbumTracks = () => {
   const location = useLocation();
 
   const { baseClassName } = useBaseClassNames('all-top-album-tracks', styles);
-  const trackList = (location.state as TTopAlbumTracksLocationState)?.trackList || [];
+  const trackList = (location.state as TTopAlbumTracksLocationState)?.trackList || {};
 
   const handlePlay = (title: string) => {
     console.log(`Play: ${title}`);
