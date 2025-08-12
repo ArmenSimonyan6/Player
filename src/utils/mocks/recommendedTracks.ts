@@ -1,4 +1,11 @@
-export const recommendedTracks = [
+type TRecommendedTracks = {
+  id: number;
+  title: string;
+  image: string;
+  artist: string;
+};
+
+export const recommendedTracks: TRecommendedTracks[] = [
   {
     id: 1,
     title: 'Jiwa yang Bersedih',

@@ -1,0 +1,11 @@
+.all-recommended-tracks {
+  &__trackList {
+    @include flex-center-stretch;
+
+    flex-wrap: wrap;
+
+    @include breakpoint(tablet) {
+      justify-content: center;
+    }
+  }
+}

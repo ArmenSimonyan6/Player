@@ -1,12 +1,14 @@
 .top-chart-tracks {
   width: 100%;
-  padding: 32px;
+  position: relative;
+  padding-right: 48px;
+  padding-bottom: 24px;
 
   @include breakpoint(tablet) {
-    padding: 24px;
+    padding-right: 32px;
   }
 
   @include breakpoint(mobile-l) {
-    padding: 14px;
+    padding-right: 16px;
   }
 }

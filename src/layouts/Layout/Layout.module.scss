@@ -3,10 +3,17 @@
 
   &__rightBlock {
     width: calc(100vw - #{$sidebar-width});
+    padding: 32px;
 
     @include breakpoint(tablet) {
+      padding: 24px;
+      overflow-y: auto;
       width: 100%;
       height: calc(100vh - #{$sidebar-height});
+    }
+
+    @include breakpoint(mobile-l) {
+      padding: 16px;
     }
   }
 }

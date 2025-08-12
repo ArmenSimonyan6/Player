@@ -26,3 +26,8 @@ $sidebar-width: 270px;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+@mixin flex-fill {
+  flex: 1;
+  min-width: 0;
+}

@@ -116,9 +116,7 @@ body {
 
 a:hover,
 button:hover {
-  cursor:
-    url('@/assets/cursorPointer.png') 10 10,
-    pointer !important;
+  cursor: pointer;
 }
 
 main {
@@ -151,10 +149,6 @@ a {
   background: none;
   display: inline-block;
   text-decoration: none !important;
-}
-
-img {
-  max-width: 100%;
 }
 
 input[type='search']::-ms-clear {

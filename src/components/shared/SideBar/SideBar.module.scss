@@ -1,0 +1,160 @@
+.sidebar {
+  position: sticky; //TODO check later browser lag on scroll to top
+  top: 0;
+  width: 100%;
+  width: 270px;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 32px 24px;
+  background-color: $color_white;
+  box-shadow: -5px -30px 25px $color_gray_150;
+
+  @include breakpoint(tablet) {
+    @include flex_align_around;
+
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    width: 100%;
+    height: 60px;
+    max-width: 100%;
+    padding: 0 10px;
+    box-shadow: 0 -5px 10px $color_gray_50;
+  }
+
+  @include breakpoint(mobile-l) {
+    padding: 0 4px;
+  }
+
+  &__linkContent {
+    @include flex_align;
+
+    gap: 12px;
+    min-width: auto;
+
+    @include breakpoint(tablet) {
+      @include flex_column_center;
+    }
+
+    &__icon {
+      display: flex;
+      font-size: 18px;
+      transition: transform 0.2s ease;
+    }
+
+    &__title {
+      @include text-wrap;
+
+      text-align: start;
+      transition: transform 0.2s ease;
+
+      @include breakpoint(tablet) {
+        text-align: center;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &__link {
+    @extend %font-montserrat-medium;
+    @include flex_align;
+
+    width: 100%;
+    padding: 16px;
+    cursor: pointer;
+    min-height: 54px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: $color_gray_400;
+    transition: all 0.3s ease;
+
+    &--active {
+      @extend %font-montserrat-semibold;
+
+      color: $color_white;
+      background: $color_violet_linear_gradient;
+
+      .sidebar__linkContent__icon,
+      .sidebar__linkContent__title {
+        color: $color_white;
+      }
+    }
+
+    @include breakpoint(tablet) {
+      @include flex_column_align_center;
+
+      padding: 0;
+      font-size: 12px;
+      border-radius: 12px;
+      min-width: max-content;
+    }
+
+    &:hover {
+      color: $color_white;
+      background: $color_violet_linear_gradient;
+
+      .sidebar__linkContent__icon,
+      .sidebar__linkContent__title {
+        color: $color_white;
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  &__nav {
+    gap: 1px;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(tablet) {
+      @include scroll-hidden-x;
+
+      gap: 4px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      overflow-x: auto;
+      max-height: 100%;
+      overflow-y: auto;
+      flex-direction: row;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 32px;
+
+    @include breakpoint(tablet) {
+      display: none;
+    }
+  }
+
+  &__sectionTitleWrap {
+    margin-bottom: 16px;
+  }
+
+  &__sectionTitle {
+    @include text-wrap;
+    @extend %font-montserrat-bold;
+
+    font-size: 16px;
+    color: $color_gray_800;
+
+    @include breakpoint(tablet) {
+      display: none;
+    }
+  }
+
+  &__sectionLinks {
+    overflow-x: auto;
+
+    @include breakpoint(tablet) {
+      @include flex_align;
+
+      flex: 1;
+      height: 100%;
+    }
+  }
+}

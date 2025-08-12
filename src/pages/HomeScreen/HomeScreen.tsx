@@ -1,7 +1,8 @@
 import { useBaseClassNames } from '@/hooks';
-import styles from './HomeScreen.module.scss';
+import { TopChartTracks } from './TopChartTracks';
 import { RecommendedTracks } from './RecommendedTracks';
-import { TopAlbumTracks } from './TopAlbumTracks';
+
+import styles from './HomeScreen.module.scss';
 
 export const HomeScreen = () => {
   const { baseClassName } = useBaseClassNames('home-screen', styles);
@@ -9,7 +10,7 @@ export const HomeScreen = () => {
   return (
     <div className={baseClassName()}>
       <RecommendedTracks />
-      <TopAlbumTracks />
+      <TopChartTracks />
     </div>
   );
 };

@@ -1,0 +1,9 @@
+.music-player {
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  padding: 20px 30px;
+  left: #{$sidebar-width};
+  background-color: $color_white;
+}
