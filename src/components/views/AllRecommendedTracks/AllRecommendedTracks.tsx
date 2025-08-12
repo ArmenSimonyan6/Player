@@ -1,17 +1,18 @@
+import { TrackCard } from '../TrackCard';
 import { useBaseClassNames } from '@/hooks';
-import { TrackCardAlbum } from '../TrackCardAlbum';
 import { SectionGoBackHeader } from '@/components';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { TTopAlbumTracksLocationState } from './AllTopAlbumTracks.props';
+import { TRecommendedLocationState } from './AllRecommendedTracks.props';
 
-import styles from './AllTopAlbumTracks.module.scss';
+import styles from './AllRecommendedTracks.module.scss';
 
-export const AllTopAlbumTracks = () => {
+export const AllRecommendedTracks = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { baseClassName } = useBaseClassNames('all-top-album-tracks', styles);
-  const trackList = (location.state as TTopAlbumTracksLocationState)?.trackList || {};
+  const { baseClassName } = useBaseClassNames('all-recommended-tracks', styles);
+
+  const trackList = (location.state as TRecommendedLocationState)?.trackList || {};
 
   const handlePlay = (title: string) => {
     console.log(`Play: ${title}`);
@@ -26,7 +27,13 @@ export const AllTopAlbumTracks = () => {
       <SectionGoBackHeader title='All Tracks' onBack={navigateBack} />
       <div className={baseClassName('__trackList')}>
         {trackList.map(track => (
-          <TrackCardAlbum key={track.id} image={track.image} onPlay={() => handlePlay('Playing')} />
+          <TrackCard
+            key={track.id}
+            title={track.title}
+            image={track.image}
+            artist={track.artist}
+            onPlay={() => handlePlay(track.title)}
+          />
         ))}
       </div>
     </div>

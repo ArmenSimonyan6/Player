@@ -15,3 +15,12 @@ $color_dark_opacity10: #12121210;
 $color_violet: #7c74ee;
 $color_violet_opacity10: #7c74ee1a;
 $color_violet_linear_gradient: linear-gradient(to right, #3dc3c0, #8568f5);
+
+$color_black_linear_gradient: linear-gradient(
+  180deg,
+  rgba(0, 0, 0, 0) 16.25%,
+  rgba(0, 0, 0, 0.306105) 43.48%,
+  rgba(0, 0, 0, 0.612209) 60.81%,
+  rgba(0, 0, 0, 0.883374) 77.05%,
+  #000000 90.75%
+);

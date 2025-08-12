@@ -1,8 +1,7 @@
 import { NotFound } from '@/pages';
 import { FC, ReactNode } from 'react';
 import { Home, Page1 } from '@/containers';
-import { AllRecommendedTracks } from '@/components/AllRecommendedTracks';
-import { AllTopAlbumTracks } from '@/components/AllTopAlbumTracks/AllTopAlbumTracks';
+import { AllRecommendedTracks } from '@/components';
 
 interface IRouteItem {
   path: string;
@@ -20,7 +19,6 @@ export const ROUTES = {
   PAGE3: '/page3',
   PAGE4: '/page4',
   RECOMMENDED_TRACKS: '/recommendedTracks',
-  TOP_ALBUM_TRACKS: '/topAlbumTracks',
 };
 
 export const ROUTES_GROUP: IRouteItem[] = [
@@ -63,12 +61,6 @@ export const ROUTES_GROUP: IRouteItem[] = [
     path: ROUTES.RECOMMENDED_TRACKS,
     component: AllRecommendedTracks,
     title: 'Recommended Tracks',
-    IsShowInSidebar: false,
-  },
-  {
-    path: ROUTES.TOP_ALBUM_TRACKS,
-    component: AllTopAlbumTracks,
-    title: 'Top Album Tracks',
     IsShowInSidebar: false,
   },
 ];

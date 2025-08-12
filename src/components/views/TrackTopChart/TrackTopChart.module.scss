@@ -1,0 +1,82 @@
+.track-top-chart {
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-shrink: 0;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: $color_white;
+
+  &__imageSection {
+    width: 170px;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+
+    @include breakpoint(tablet) {
+      width: 140px;
+    }
+
+    @include breakpoint(mobile-l) {
+      width: 110px;
+    }
+
+    &::after {
+      inset: 0;
+      z-index: 1;
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      background: $color_black_linear_gradient;
+    }
+  }
+
+  &__image {
+    height: 100%;
+  }
+
+  .track-top-chart__imageTitle {
+    @extend %font-montserrat-bold;
+    @include text-ellipsis;
+
+    left: 0;
+    right: 0;
+    z-index: 9;
+    width: 100%;
+    bottom: 16px;
+    display: block;
+    margin: 0 auto;
+    font-size: 18px;
+    max-width: 164px;
+    position: absolute;
+    text-align: center;
+    color: $color_white;
+
+    @include breakpoint(tablet) {
+      font-size: 14px;
+    }
+
+    @include breakpoint(mobile-l) {
+      font-size: 10px;
+    }
+  }
+
+  &__trackList {
+    @include flex-fill;
+    @include flex_column;
+
+    padding-left: 20px;
+    align-self: center;
+    justify-content: space-between;
+
+    @include breakpoint(wide) {
+      padding-left: 10px;
+    }
+
+    @include breakpoint(mobile-l) {
+      padding-left: 6px;
+    }
+  }
+}

@@ -1,0 +1,105 @@
+.track-top-chart-item {
+  @include flex_align_between;
+
+  padding: 8px;
+  max-width: 100%;
+  border-radius: 12px;
+
+  @include breakpoint(tablet) {
+    padding: 4px;
+  }
+
+  @include breakpoint(mobile-l) {
+    padding: 2px;
+  }
+
+  &__hovered {
+    background-color: $color_violet_opacity10;
+  }
+
+  &__content {
+    @include flex-fill;
+    @include flex_align;
+    @extend %font-montserrat-medium;
+
+    gap: 12px;
+
+    @include breakpoint(mobile-l) {
+      gap: 4;
+    }
+  }
+
+  &__playIcon {
+    width: 24px;
+
+    @include breakpoint(mobile-l) {
+      width: 14px;
+    }
+  }
+
+  &__itemIndex {
+    @include text-ellipsis;
+
+    width: 24px;
+    flex-shrink: 0;
+    font-size: 20px;
+    text-align: center;
+
+    @include breakpoint(tablet) {
+      font-size: 16px;
+    }
+
+    @include breakpoint(mobile-l) {
+      width: 14px;
+      font-size: 12px;
+    }
+  }
+
+  &__track {
+    @include flex-fill;
+    @include flex_column;
+
+    gap: 4px;
+  }
+
+  &__title {
+    @include text-ellipsis;
+
+    font-size: 16px;
+    line-height: 20px;
+
+    @include breakpoint(tablet) {
+      font-size: 14px;
+    }
+
+    @include breakpoint(mobile-l) {
+      font-size: 12px;
+    }
+  }
+
+  &__trackInfo {
+    @include text-ellipsis;
+
+    font-size: 14px;
+    max-width: 100%;
+    color: $color_gray_600;
+
+    @include breakpoint(tablet) {
+      font-size: 12px;
+    }
+
+    @include breakpoint(mobile-l) {
+      gap: 4px;
+      font-size: 10px;
+    }
+  }
+
+  &__artist {
+    @include flex-fill;
+    @include text-ellipsis;
+  }
+
+  &__duration {
+    @include text-wrap;
+  }
+}

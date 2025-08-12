@@ -1,2 +1,2 @@
-export * from './topAlbumTracks';
+export * from './topChartTracks';
 export * from './recommendedTracks';

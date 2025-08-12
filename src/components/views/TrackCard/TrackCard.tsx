@@ -1,7 +1,8 @@
-import { PlayIcon } from '@/assets';
 import { useBaseClassNames } from '@/hooks';
 import { Button, Image } from '@/components';
+import { PlayIconDarkOpacity } from '@/assets';
 import { TPropsTrackCard } from './TrackCard.props';
+
 import styles from './TrackCard.module.scss';
 
 export const TrackCard = ({ title, artist, image, onPlay }: TPropsTrackCard) => {
@@ -12,7 +13,7 @@ export const TrackCard = ({ title, artist, image, onPlay }: TPropsTrackCard) => 
       <div className={baseClassName('__imageWrapper')}>
         <Image src={image} alt={title} className={baseClassName('__image')} />
         <Button className={baseClassName('__playButton')} onClick={onPlay}>
-          <PlayIcon />
+          <PlayIconDarkOpacity />
         </Button>
       </div>
       <div className={baseClassName('__info')}>
