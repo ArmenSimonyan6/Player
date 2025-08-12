@@ -1,0 +1,33 @@
+.active-player-artist {
+  @include flex_align;
+
+  gap: 20px;
+  width: 100%;
+  max-width: 305px;
+  background: $color_white;
+
+  @include breakpoint(tablet) {
+    gap: 16px;
+  }
+
+  @include breakpoint(mobile-l) {
+    gap: 10px;
+  }
+
+  &__image {
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+    border-radius: 50%;
+
+    @include breakpoint(tablet) {
+      width: 52px;
+      height: 52px;
+    }
+
+    @include breakpoint(mobile-l) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
