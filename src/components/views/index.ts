@@ -2,4 +2,4 @@ export * from './TrackCard';
 export * from './TrackTopChart';
 export * from './TrackCardAlbum';
 export * from './TrackTopChartItem';
-export * from './AllRecommendedTracks';
+export * from './ActivePlayerArtist';

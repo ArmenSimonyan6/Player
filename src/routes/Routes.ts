@@ -1,7 +1,7 @@
 import { NotFound } from '@/pages';
 import { FC, ReactNode } from 'react';
 import { Home, Page1 } from '@/containers';
-import { AllRecommendedTracks } from '@/components';
+import { AllRecommendedTracks } from '@/components/views/AllRecommendedTracks';
 
 interface IRouteItem {
   path: string;

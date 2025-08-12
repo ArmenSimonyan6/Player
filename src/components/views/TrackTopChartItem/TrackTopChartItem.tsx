@@ -2,6 +2,7 @@ import { PlayIcon } from '@/assets';
 import { useRef, useState } from 'react';
 import { DOT, joinStrings } from '@/utils';
 import { useBaseClassNames } from '@/hooks';
+import { TitleSubtitle } from '@/components/shared';
 import { TTrackItemProps } from './TrackTopChartItem.props';
 
 import styles from './TrackTopChartItem.module.scss';
@@ -42,10 +43,7 @@ export const TrackTopChartItem = ({ index, title, artist, duration }: TTrackItem
         ) : (
           <span className={baseClassName('__itemIndex')}>{index}</span>
         )}
-        <div className={baseClassName('__track')}>
-          <div className={baseClassName('__title')}>{title}</div>
-          <div className={baseClassName('__trackInfo')}>{info}</div>
-        </div>
+        <TitleSubtitle title={title} subtitle={info} />
       </div>
     </div>
   );
