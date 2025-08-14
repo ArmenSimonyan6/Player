@@ -1,0 +1,11 @@
+.task-square-control {
+  &__taskSquareIcon {
+    border: none;
+    display: flex;
+    cursor: pointer;
+    font-size: 20px;
+    background: none;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+}

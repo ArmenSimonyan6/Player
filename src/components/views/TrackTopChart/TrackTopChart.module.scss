@@ -34,7 +34,15 @@
   }
 
   &__image {
-    height: 100%;
+    height: 228px;
+
+    @include breakpoint(tablet) {
+      height: 178px;
+    }
+
+    @include breakpoint(mobile-l) {
+      height: 144px;
+    }
   }
 
   .track-top-chart__imageTitle {

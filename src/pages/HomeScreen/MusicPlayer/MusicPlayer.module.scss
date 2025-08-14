@@ -1,12 +1,23 @@
 .music-player {
+  @include flex_align;
+
   right: 0;
   bottom: 0;
+  gap: 28px;
+  z-index: 9;
   position: fixed;
   padding: 20px 30px;
   background-color: $color_white;
   width: calc(100vw - #{$sidebar-width});
 
+  @include breakpoint(desktop) {
+    @include flex_between;
+
+    flex-direction: column;
+  }
+
   @include breakpoint(tablet) {
+    gap: 20px;
     width: 100%;
     padding: 16px 22px;
     bottom: calc(#{$sidebar-height}); // TODO will check later
@@ -14,5 +25,11 @@
 
   @include breakpoint(mobile-l) {
     padding: 12px 16px;
+  }
+
+  &__top {
+    @include flex_align_between;
+
+    width: 100%;
   }
 }

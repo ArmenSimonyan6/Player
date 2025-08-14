@@ -1,4 +1,4 @@
-import { Button } from '@/components';
+import { CustomButton } from '@/components';
 import { useBaseClassNames } from '@/hooks';
 import colors from '@/styles/colors/colors.module.scss';
 import { TSectionHeaderProps } from './SectionHeader.props';
@@ -11,13 +11,13 @@ export const SectionHeader = ({ title, onClick, actionLabel }: TSectionHeaderPro
   return (
     <div className={baseClassName()}>
       <span className={baseClassName('__title')}>{title}</span>
-      <Button
+      <CustomButton
         onClick={onClick}
         style={{ color: colors.colorViolet }}
         className={baseClassName('__button')}
       >
         {actionLabel}
-      </Button>
+      </CustomButton>
     </div>
   );
 };

@@ -3,6 +3,7 @@ $color_white: #fff;
 $color_gray_50: #f2f2f2;
 $color_gray_100: #e6e6e6;
 $color_gray_150: #d7d7d7;
+$color_gray_180: #dadada;
 $color_gray_200: #c4c4c4;
 $color_gray_400: #999999;
 $color_gray_600: #6b6b6b;
@@ -23,4 +24,20 @@ $color_black_linear_gradient: linear-gradient(
   rgba(0, 0, 0, 0.612209) 60.81%,
   rgba(0, 0, 0, 0.883374) 77.05%,
   #000000 90.75%
+);
+
+$color_volume_linear_gradient: linear-gradient(
+  to right,
+  $color_violet 0%,
+  $color_violet var(--volume-percent, 0%),
+  $color_gray_180 var(--volume-percent, 0%),
+  $color_gray_180 100%
+);
+
+$color_progress_linear_gradient: linear-gradient(
+  to right,
+  $color_violet 0%,
+  $color_violet var(--progress-percent, 0%),
+  $color_gray_180 var(--progress-percent, 0%),
+  $color_gray_180 100%
 );

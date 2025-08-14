@@ -1,7 +1,7 @@
 import { useBaseClassNames } from '@/hooks';
-import { Button, Image, TitleSubtitle } from '@/components';
 import { PlayIconDarkOpacity } from '@/assets';
 import { TPropsTrackCard } from './TrackCard.props';
+import { CustomButton, Image, TitleSubtitle } from '@/components';
 
 import styles from './TrackCard.module.scss';
 
@@ -12,11 +12,13 @@ export const TrackCard = ({ title, artist, image, onPlay }: TPropsTrackCard) => 
     <div className={baseClassName()}>
       <div className={baseClassName('__imageWrapper')}>
         <Image src={image} alt={title} className={baseClassName('__image')} />
-        <Button className={baseClassName('__playButton')} onClick={onPlay}>
+        <CustomButton className={baseClassName('__playButton')} onClick={onPlay}>
           <PlayIconDarkOpacity />
-        </Button>
+        </CustomButton>
       </div>
-      <TitleSubtitle title={title} subtitle={artist} />
+      <div className={baseClassName('__info')}>
+        <TitleSubtitle title={title} subtitle={artist} />
+      </div>
     </div>
   );
 };

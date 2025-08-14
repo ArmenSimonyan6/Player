@@ -8,10 +8,12 @@
 
   @include breakpoint(tablet) {
     gap: 16px;
+    max-width: 260px;
   }
 
   @include breakpoint(mobile-l) {
     gap: 10px;
+    max-width: 180px;
   }
 
   &__image {

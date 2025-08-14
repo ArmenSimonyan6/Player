@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cx from 'classnames';
 import { IImageProps } from './Image.props';
 import { useBaseClassNames } from '@/hooks';
 
@@ -25,7 +25,7 @@ export const Image = ({
       height={height}
       onClick={onClick}
       style={{ objectFit }}
-      className={classNames(baseClassName(), className)}
+      className={cx(baseClassName(), className)}
     />
   );
 };
