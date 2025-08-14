@@ -1,5 +1,5 @@
-import { Button } from '@/components';
 import { ArrowRightIcon } from '@/assets';
+import { CustomButton } from '@/components';
 import { useBaseClassNames } from '@/hooks';
 
 import styles from './SwiperNextIcon.module.scss';
@@ -13,8 +13,8 @@ export const SwiperNextIcon = ({ onNext, ref }: SwiperNextIconProps) => {
   const { baseClassName } = useBaseClassNames('custom-right-button', styles);
 
   return (
-    <Button ref={ref} onClick={onNext} className={baseClassName()}>
+    <CustomButton ref={ref} onClick={onNext} className={baseClassName()}>
       <ArrowRightIcon />
-    </Button>
+    </CustomButton>
   );
 };

@@ -8,6 +8,7 @@ $tablet-l: 850px;
 $desktop-s: 992px;
 $desktop: 1024px;
 $desktop-l: 1100px;
+$desktop-xl: 1150px;
 $wide: 1245px;
 $wide-s: 1200px;
 $wide-m: 1350px;
@@ -24,6 +25,7 @@ $breakpoints: (
   desktop-s: $desktop-s,
   desktop: $desktop,
   desktop-l: $desktop-l,
+  desktop-xl: $desktop-xl,
   wide-s: $wide-s,
   wide: $wide,
   wide-m: $wide-m,

@@ -1,11 +1,6 @@
-import { TButtonProps } from './Button.props';
-import { PropsWithChildren, Ref } from 'react';
+import { CustomButtonProps } from './CustomButton.props';
 
-type ButtonProps = PropsWithChildren<TButtonProps> & {
-  ref?: Ref<HTMLButtonElement>;
-};
-
-export const Button = ({
+export const CustomButton = ({
   ref,
   style,
   onClick,
@@ -13,7 +8,7 @@ export const Button = ({
   isDisabled,
   className = '',
   type = 'button',
-}: ButtonProps) => {
+}: CustomButtonProps) => {
   return (
     <button
       ref={ref}

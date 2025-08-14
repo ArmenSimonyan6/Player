@@ -1,5 +1,5 @@
-import { Button } from '@/components';
 import { ArrowLeftIcon } from '@/assets';
+import { CustomButton } from '@/components';
 import { useBaseClassNames } from '@/hooks';
 import { TSectionGoBackHeaderProps } from './SectionGoBackHeader.props';
 
@@ -10,9 +10,9 @@ export const SectionGoBackHeader = ({ title, onBack }: TSectionGoBackHeaderProps
 
   return (
     <div className={baseClassName()}>
-      <Button onClick={onBack} className={baseClassName('__goBackButton')}>
+      <CustomButton onClick={onBack} className={baseClassName('__goBackButton')}>
         <ArrowLeftIcon />
-      </Button>
+      </CustomButton>
       <h1 className={baseClassName('__title')}>{title}</h1>
     </div>
   );

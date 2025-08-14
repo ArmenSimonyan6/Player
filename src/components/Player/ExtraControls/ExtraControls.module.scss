@@ -1,0 +1,108 @@
+.extra-controls {
+  @include flex_align;
+
+  gap: 20px;
+  border-radius: 50%;
+
+  &__volumeWrapper {
+    @include flex_align;
+
+    gap: 20px;
+    position: relative;
+  }
+
+  &__controlsExtra {
+    @include flex_align;
+
+    gap: 20px;
+    max-height: fit-content;
+
+    @include breakpoint(tablet) {
+      gap: 14px;
+    }
+  }
+
+  &__volumeSlider {
+    @include hide-range-thumb;
+
+    margin: 0;
+    height: 4px;
+    width: 100px;
+    cursor: pointer;
+    appearance: none;
+    border-radius: 3px;
+    position: relative;
+    -webkit-appearance: none;
+    background: $color_volume_linear_gradient;
+
+    &::before {
+      content: '';
+      top: -6px;
+      left: -6px;
+      right: -6px;
+      bottom: -6px;
+      position: absolute;
+      background: transparent;
+    }
+
+    &::-webkit-slider-thumb {
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+      margin-top: -4px;
+      border-radius: 50%;
+      -webkit-appearance: none;
+    }
+
+    &::-moz-range-thumb {
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+    }
+
+    @include breakpoint(desktop-xl) {
+      position: absolute;
+      left: 50%;
+      height: 4px;
+      bottom: 100%;
+      width: 100px;
+      cursor: pointer;
+      appearance: none;
+      border-radius: 4px;
+      margin-bottom: 60px;
+      transform-origin: center;
+      background: $color_volume_linear_gradient;
+      transform: translateX(-50%) rotate(-90deg);
+      transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+      &.closed {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      &.open {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      &::-webkit-slider-thumb {
+        width: 12px;
+        height: 12px;
+        cursor: pointer;
+        appearance: none;
+        border-radius: 50%;
+        background: $color_violet;
+      }
+
+      &::-moz-range-thumb {
+        width: 12px;
+        height: 12px;
+        cursor: pointer;
+        border-radius: 50%;
+        background: $color_violet;
+      }
+    }
+  }
+}

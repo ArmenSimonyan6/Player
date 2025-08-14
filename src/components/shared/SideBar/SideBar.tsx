@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import cx from 'classnames';
 import { JSX, useRef } from 'react';
 import { RouteTitle } from './SideBar.props';
 import { ROUTES, ROUTES_GROUP } from '@/routes';
@@ -48,7 +48,7 @@ export const Sidebar = () => {
                 to={path}
                 ref={isActive ? activeElementRef : null}
                 className={({ isActive }) =>
-                  classNames(baseClassName('__link'), {
+                  cx(baseClassName('__link'), {
                     [baseClassName('__link', ['active'])]: isActive,
                   })
                 }

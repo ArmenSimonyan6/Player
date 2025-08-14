@@ -43,6 +43,7 @@
 
   &__button:hover {
     border-radius: 6px;
+    transition: background-color 0.3s ease;
     background-color: $color_violet_opacity10;
   }
 }
